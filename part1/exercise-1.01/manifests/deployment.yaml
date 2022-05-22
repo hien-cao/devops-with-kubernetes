@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: randomstringgenerator-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: randomstringgenerator
+  template:
+    metadata:
+      labels:
+        app: randomstringgenerator
+    spec:
+      containers:
+        - name: randomstringgenerator
+          image: warchest77/randomstring-part1:1.01
+    
