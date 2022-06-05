@@ -1,0 +1,1 @@
+# Exercise 1.07: External access with Ingress
