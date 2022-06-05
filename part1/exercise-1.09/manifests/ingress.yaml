@@ -1,18 +1,11 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: log-output-ingress
+  name: ping-pong-ingress
 spec:
   rules:
   - http:
       paths:
-      - path: /
-        pathType: Exact
-        backend:
-          service:
-            name: log-output-svc
-            port:
-              number: 3003
       - path: /pingpong
         pathType: Prefix
         backend:
@@ -20,4 +13,3 @@ spec:
             name: ping-pong-svc
             port:
               number: 3004
-              
