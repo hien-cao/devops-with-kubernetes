@@ -1,0 +1,14 @@
+{
+  "name": "project-todos",
+  "version": "1.0.5",
+  "description": "Project TODOs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "author": "Hien Cao",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
