@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-output-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-output
+  template:
+    metadata:
+      labels:
+        app: log-output
+    spec:
+      volumes:
+        - name: shared-files
+          emptyDir: {}
+      containers:
+        - name: time-creation
+          image: warchest77/time-creation:v0.1
+          volumeMounts:
+          - name: shared-files
+            mountPath: /files
+        - name: time-print
+          image: warchest77/time-print:v0.1
+          volumeMounts:
+          - name: shared-files
+            mountPath: /files
+          
