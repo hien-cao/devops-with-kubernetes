@@ -1,0 +1,11 @@
+{
+  "name": "ping-pong",
+  "version": "1.0.1",
+  "description": "Ping pong",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Hien Cao",
+  "license": "ISC"
+}

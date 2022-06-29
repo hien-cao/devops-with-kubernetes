@@ -1,0 +1,14 @@
+{
+  "name": "log-ouput",
+  "version": "1.0.0",
+  "description": "Log output",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Hien Cao",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1"
+  }
+}

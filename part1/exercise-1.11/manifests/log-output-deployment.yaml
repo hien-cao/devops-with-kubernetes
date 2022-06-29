@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-output-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-output
+  template:
+    metadata:
+      labels:
+        app: log-output
+    spec:
+      volumes:
+        - name: shared-files
+          persistentVolumeClaim:
+            claimName: log-output-claim
+      containers:
+        - name: log-output
+          image: warchest77/log-output:v0.2
+          volumeMounts:
+          - name: shared-files
+            mountPath: /files
+          
