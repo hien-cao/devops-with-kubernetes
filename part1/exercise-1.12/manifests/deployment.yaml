@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todos-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todos
+  template:
+    metadata:
+      labels:
+        app: todos
+    spec:
+      volumes:
+        - name: shared-files
+          persistentVolumeClaim:
+            claimName: project-claim
+      containers:
+        - name: todos
+          image: warchest77/project:v0.6
+          volumeMounts:
+          - name: shared-files
+            mountPath: /files
+          
